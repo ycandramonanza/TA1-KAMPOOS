@@ -18,8 +18,10 @@ class TransaksiController extends Controller
      */
    public function transaksiTabungan(nasabah $tabungan){
         $nasabah_id = $tabungan->id;
+        // dd($nasabah_id);
         $authID    = Auth::user()->id;
-        $tabungans = tabungan::where('karyawan_id', $authID)->with('nasabah')->orderBy('id', 'DESC')->get();
+        $tabungans = tabungan::where('karyawan_id', $authID)->where('nasabah_id', $nasabah_id)->with('nasabah')->orderBy('id', 'DESC')->get();
+        // dd($tabungans);
         return view('transaksi.trsTabungan', compact('tabungans', 'tabungan'));
     }
 

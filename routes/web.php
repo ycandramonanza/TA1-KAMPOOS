@@ -40,6 +40,11 @@ Route::middleware('auth')->group(function() {
     Route::resource('laba', LabaController::class);
      // Piutang
      Route::resource('piutang', PiutangController::class);
+    //  Export
+    Route::resource('Export', ExportController::class);
+    Route::get('tabungan', 'ExportController@tabungan')->name('export.tabungan');
+    Route::get('transaksi-print', 'ExportController@trsprint')->name('export.transaksi');
+    Route::get('transaksi-print/notransaksi', 'ExportController@notrsprint')->name('export.notransaksi');
   });
 
 

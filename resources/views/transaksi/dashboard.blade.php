@@ -34,6 +34,15 @@
                     </div>
                 @endif
                 <h5 style="font-size: 15px" class="alert alert-success">Daftar Nasabah Yang sudah melakukan Transaksi Hari ini</h5>
+                {{-- Print All --}}
+                {{-- <a href="{{route('export.transaksi')}}" class="btn btn-success" style="color: white"><i class="fas fa-file-export"></i> Print All</a> --}}
+                <form action="{{route('export.transaksi')}}">
+                    <label for="">Dari :</label>
+                         <input type="date" name="dari">
+                    <label for="">Sampai :</label>
+                         <input type="date" name="sampai">
+                    <button type="submit" class="btn btn-success"><i class="fas fa-print"></i> Print</button>
+                </form>
                 <div class="table-responsive">
                     <table class="table" id="myTable">
                         <thead>
@@ -83,6 +92,13 @@
                 <br>
                 <br>
                 <h5  style="font-size: 15px" class="alert alert-danger">Daftar Nasabah Yang belum melakukan Transaksi Hari ini</h5>
+                <form action="{{route('export.notransaksi')}}">
+                    <label for="">Dari :</label>
+                         <input type="date" name="dari">
+                    <label for="">Sampai :</label>
+                         <input type="date" name="sampai">
+                    <button type="submit" class="btn btn-success"><i class="fas fa-print"></i>Print</button>
+                </form>
                 <div class="table-responsive">
                     <table class="table" id="myTables">
                         <thead>

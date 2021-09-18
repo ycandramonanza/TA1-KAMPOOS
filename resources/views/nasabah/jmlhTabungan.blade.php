@@ -23,7 +23,7 @@
         <div class="col-md-12" >
             <div class="card">
                 <div class="card-header">
-                    <a href="{{route('nasabah.index')}}" class="btn btn-info"><i class="fas fa-users"></i>  Data Nasabah</a>
+                    <a href="{{route('nasabah.index')}}" style="color: white" class="btn btn-info"><i class="fas fa-users"></i>  Data Nasabah</a>
                 </div>
                 <br>
                 <span class="alert alert-info">NB: Total Tabungan Nasabah Saat ini adalah
@@ -40,6 +40,9 @@
                         {{ session('delete') }}
                     </div>
                 @endif
+                <a href="{{route('export.tabungan')}}" class="btn btn-success" style="color: white"><i class="fas fa-file-export"></i> Print</a>
+                <br>
+                <br>
                 <div class="table-responsive">
                     <table class="table" id="myTable">
                         <thead>
